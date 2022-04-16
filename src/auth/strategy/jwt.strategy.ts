@@ -24,6 +24,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
           include: {
             permissions: {
               select: {
+                id: true,
                 title: true,
               },
             },

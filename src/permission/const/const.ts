@@ -1,6 +1,6 @@
-import { AuthPermission } from 'src/auth/permission';
-import { RolesPermission } from 'src/roles/permission';
-import { PermissionsPermission } from 'src/permission/permission';
+import { AuthPermission } from '../../auth/permission';
+import { RolesPermission } from '../../roles/permission';
+import { PermissionsPermission } from '../permission';
 
 export const Permission = {
   ...RolesPermission,

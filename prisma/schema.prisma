@@ -20,10 +20,12 @@ model User {
   hash  String
 
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt()
+  updatedAt DateTime? @updatedAt()
 
   roleId Int
   role   Role @relation(fields: [roleId], references: [id])
+
+  deactivated Boolean? @default(false)
 
   @@map("users")
 }
@@ -36,6 +38,11 @@ model Role {
   users       User[]
   permissions Permission[]
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt()
+
+  deactivated Boolean? @default(false)
+
   @@map("roles")
 }
 
@@ -46,4 +53,9 @@ model Permission {
 
   roleId Int
   role   Role @relation(fields: [roleId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt()
+
+  @@map("permissions")
 }
